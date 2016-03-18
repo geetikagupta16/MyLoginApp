@@ -1,0 +1,74 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /webjars/*file                    controllers.WebJarAssets.at(file)
+
+
+GET     /dashboard                              controllers.DashboardController.getDashboard
+
+POST     /addAward                              controllers.DashboardController.addAward
+
+POST     /addLanguage                           controllers.DashboardController.addLanguage
+
+POST     /addProgLanguage                       controllers.DashboardController.addProgLanguage
+
+GET      /adminDashboard                      controllers.DashboardController.getAdminDashboard
+
+GET     /login                              controllers.LoginController.login
+
+POST    /auth                                   controllers.LoginController.auth
+
+GET     /logout                                 controllers.DashboardController.logout
+
+GET     /getawards                              controllers.DashboardController.getAwards
+
+GET     /getlanguages                           controllers.DashboardController.getLanguages
+
+GET     /getassignments                         controllers.DashboardController.getAssignments
+
+GET     /getproglanguages                       controllers.DashboardController.getProgLanguages
+
+GET     /getAllAwards                           controllers.DashboardController.getAllAwards
+
+GET     /getAllLanguages                        controllers.DashboardController.getAllLanguages
+
+GET     /getAllProgLanguages                    controllers.DashboardController.getAllProgLanguages
+
+GET     /getAllAssignments                      controllers.DashboardController.getAllAssignments
+
+GET     /getAllInterns                          controllers.DashboardController.getAllInterns
+
+POST     /addAssignment                          controllers.DashboardController.addAssignment
+
+GET     /deleteAward                             controllers.DashboardController.deleteAward(id:Int)
+
+GET     /deleteLanguage                             controllers.DashboardController.deleteLanguage(sno:Int)
+
+GET     /deleteProgLanguage                             controllers.DashboardController.deleteProgLanguage(sno:Int)
+
+GET    /editAward                               controllers.DashboardController.editAward(id:Int)
+
+POST    /updateAward                            controllers.DashboardController.updateAward
+
+GET    /editLanguage                               controllers.DashboardController.editLanguage(sno:Int)
+
+POST    /updateLanguage                            controllers.DashboardController.updateLanguage
+
+GET    /editProgLanguage                               controllers.DashboardController.editProgLanguage(sno:Int)
+
+POST    /updateProgLanguage                            controllers.DashboardController.updateProgLanguage
+
+
+
+
+
+
+
+

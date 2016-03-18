@@ -1,0 +1,31 @@
+@import b3.vertical.fieldConstructor
+
+@(x:List[Assignment])(implicit message:Messages,flash:Flash)
+<h1 style ="color:blue!important;">Assignments</h1>
+<h2 style="color:red!important;">total no of assignment ---@x.length</h2>
+<table class="table"style="border:2px solid!important;">
+    <thead>
+    <tr>
+        <th>S.no</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Marks</th>
+        <th>Remarks</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+         @for(asg<-x){
+         <tr><td>@asg.sno</td>
+              <td>@asg.name</td>
+             <td>@asg.date</td>
+
+             <td>@asg.marks</td>
+            <td>@asg.remarks</td>
+
+                   </tr>
+              }
+
+    </tbody>
+</table>

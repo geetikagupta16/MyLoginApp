@@ -1,0 +1,81 @@
+@import b3.vertical.fieldConstructor
+@main("Dashboard") {
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+    <li><a data-toggle="tab" href="#awards" id="award">Awards/Certificates</a></li>
+    <li><a data-toggle="tab" href="#lang" id="language">Languages</a></li>
+    <li><a data-toggle="tab" href="#assignment" id="assignments">Assignments</a></li>
+    <li><a data-toggle="tab" href="#proglang" id="progLanguages">Programming Languages</a></li>
+<li><a href="@routes.DashboardController.logout">Sign out</a></li>
+
+</ul>
+<script>
+
+
+$(document).ready(function(){
+$('#award').click(function(){
+
+$.get("/getawards",function(data,status){
+$('#awardmenu').html(data);
+});
+});
+
+$('#language').click(function(){
+$.get("/getlanguages",function(data,status){
+$('#languageMenu').html(data);
+
+});
+});
+
+$('#assignments').click(function(){
+$.get("/getassignments",function(data,status){
+$('#assignmentMenu').html(data);
+
+});
+});
+
+
+$('#progLanguages').click(function(){
+$.get("/getproglanguages",function(data,status){
+$('#progLangMenu').html(data);
+
+});
+});
+
+});
+
+</script>
+
+
+
+<div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+        <h3>HOME</h3>
+        <p>Some content.</p>
+    </div>
+    <div id="awards" class="tab-pane fade">
+        <div id="awardmenu">
+
+        </div>
+
+        <!-- Modal -->
+
+    </div>
+    <div id="lang" class="tab-pane fade">
+<div id="languageMenu">
+
+</div>
+    </div>
+
+    <div id="assignment" class="tab-pane fade">
+<div id="assignmentMenu">
+
+</div>
+    </div>
+
+    <div id="proglang" class="tab-pane fade">
+<div id="progLangMenu">
+
+</div>
+</div>
+}
